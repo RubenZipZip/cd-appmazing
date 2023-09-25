@@ -1,1 +1,11 @@
 
+server:
+    port: 30030
+
+spring:
+  datasource:
+    driver-class name: org.hsqldb.jdbcDriver
+    url: jdbc:hsqldb:hsql://localhost:9013/templateDB
+    username:
+    password:
+
