@@ -5,6 +5,8 @@ import com.campusdual.appmazing.model.dto.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
     @RequestMapping("/products") //nombreHost/products la respuesta solo seria a partir de /products
@@ -34,6 +36,9 @@ import org.springframework.web.bind.annotation.*;
        return this.productService.queryProduct(product);
     }
 
-
+    @GetMapping(value = "/getAll") //
+    public List<ProductDTO> queryAllProducts(){
+        return this.productService.queryAllProducts();
+}
 }
 
