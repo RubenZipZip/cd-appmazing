@@ -12,7 +12,9 @@ public class Product {
     // añadimos las columnas de la BBDD como atributos de la clase, con su tipo(int, string, boolean,,,)
     @Id //indica que esta es la clave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY) //como es un valor autogenerable lo generamos siguiendo la estrategia de GenerationType.IDENTITY
-    private int id;
+
+
+
     @Column
     private String name;
     @Column
@@ -25,13 +27,9 @@ public class Product {
     @Column
     private Date date_added;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
+
 
     public String getName() {
         return name;

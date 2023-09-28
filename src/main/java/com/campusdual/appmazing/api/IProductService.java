@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface IProductService {
 
+
     ProductDTO queryProduct (ProductDTO product);
     List<ProductDTO> queryAllProducts();
     int insertProduct (ProductDTO product);

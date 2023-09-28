@@ -1,6 +1,6 @@
 package com.campusdual.appmazing.model.dto;
 public class ContactDTO {
-
+private int id;
     private String name;
     private String surname1;
     private String surname2;
@@ -45,4 +45,8 @@ public class ContactDTO {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+
+
 }

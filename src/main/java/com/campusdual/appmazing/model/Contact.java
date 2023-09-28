@@ -9,8 +9,8 @@ public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
-    @Column
 
+    @Column
     private String surname1;
     @Column
     private String surname2;
@@ -57,5 +57,13 @@ public class Contact {
 
     public void setEmail(String email) {
         this.email = email;
+
     }
+
+
+
 }
+
+
+
+
