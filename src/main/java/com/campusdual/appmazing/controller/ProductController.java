@@ -13,7 +13,7 @@ import java.util.List;
 
     public class ProductController {
     @Autowired //devuelve una instancia de una interfaz IproductService (
-    IProductService productService;
+    private IProductService productService;
 
     @GetMapping // respoindera con una peticion GET cuando le llegue un peticion testController
     public String testController() {
@@ -39,6 +39,20 @@ import java.util.List;
     @GetMapping(value = "/getAll") //
     public List<ProductDTO> queryAllProducts(){
         return this.productService.queryAllProducts();
+}
+
+@PostMapping(value = "/add")
+public int insertProduct(@RequestBody ProductDTO product) {
+    return this.productService.insertProduct(product);
+}
+
+    @PutMapping(value = "/update")
+    public int updateProduct(@RequestBody ProductDTO product){
+        return this.productService.updateProduct(product);
+}
+@DeleteMapping(value = "/delete")
+    public int deleteProduct(@RequestBody ProductDTO product){
+        return this.productService.deleteProduct(product);
 }
 }
 
