@@ -8,7 +8,12 @@ import javax.persistence.*;
 public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
+private int Id;
+
     private String name;
+
 
     @Column
     private String surname1;
@@ -60,9 +65,15 @@ public class Contact {
 
     }
 
+    public int getId() {
+        return Id;
+    }
 
-
+    public void setId(int id) {
+        Id = id;
+    }
 }
+
 
 
 

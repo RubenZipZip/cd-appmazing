@@ -14,7 +14,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //como es un valor autogenerable lo generamos siguiendo la estrategia de GenerationType.IDENTITY
 
 
-
+    private int id;
     @Column
     private String name;
     @Column
@@ -69,5 +69,13 @@ public class Product {
 
     public void setDate_added(Date date_added) {
         this.date_added = date_added;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
