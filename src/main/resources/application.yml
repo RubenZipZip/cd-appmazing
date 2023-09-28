@@ -1,27 +1,25 @@
 spring:
   jpa:
     hibernate:
-      properties:
-        hibernate:
-          format_sql: false
-          dialect: org.hibernate.dialect.HSQLDialect
+    properties:
+      hibernate:
+        format_sql: false
+        dialect: org.hibernate.dialect.HSQLDialect
       ddl-auto: none #spring.jpa.hibernate.ddl-auto = none
       naming:
         physical-naming: org.hibernate.boot.model.naming.PhysicaNamingStrategyStandardImpl
-server:
-    port: 30030
-    datasource:
+  datasource:
     driver-class name: org.hsqldb.jdbcDriver #spring.datasource.driver-class-name
     url: jdbc:hsqldb:hsql://localhost:9013/templateDB
     username:
     password:
-      loggin:
-        level:
-          org:
-            hibernate:
-              SQL: debug
-              type:
-                descriptor:
-                  sql: trace
-
-
+server:
+  port: 30030
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+      type:
+        descriptor:
+          sql: trace

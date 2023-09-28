@@ -11,7 +11,6 @@ public class Contact {
 
 
 private int Id;
-
     private String name;
 
 
