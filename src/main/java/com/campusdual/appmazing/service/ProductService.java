@@ -51,7 +51,20 @@ public class ProductService implements IProductService{ //Indicamos como los ser
         this.productDao.delete(product);
         return id;
     }
+     @Override
+    public int buyProduct(ProductDTO product, int quantity) { //le pasamos a nuestro servicio el producto y una cantidad
+        //y vamos a controllerService a decirlle cuanto es quantity 5
+        ProductDTO productToBuy = this.queryProduct(product);
+        if (productToBuy.isActive() && quantity <= productToBuy.getStock()){
+            productToBuy.setStock(productToBuy.getStock()-quantity);
+            this.updateProduct(productToBuy);
+        }
+        return productToBuy.getStock();
+    }
+public BigDecimal calculateTotalPrice(ProductDTO product, int quantity) {
+        ProductDTO productToBuy = this.queryProduct(product);
+        return productToBuy.getPrice().multiply(BigDecimal.valueOf(quantity));
 
-
+}
 }
 
