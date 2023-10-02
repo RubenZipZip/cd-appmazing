@@ -1,9 +1,13 @@
 package com.campusdual.appmazing.model.dto;
 
+import com.campusdual.appmazing.model.Categories;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
 public class ProductDTO {
+    //Viene aser lo mismo que el ProductDao pero sin anotaciones con getter y setter y pasaria a los
+    //Mapper para hacer la adaptacion del modelo
 
 
         private int id;
@@ -18,6 +22,8 @@ public class ProductDTO {
         private boolean active;
 
         private Date date_added;
+
+    private Categories categories;
 
         public int getId() {
         return id;
@@ -67,5 +73,12 @@ public class ProductDTO {
         this.date_added = date_added;
     }
 
+    public Categories getCategories() {
+        return this.categories;
     }
+
+    public void setCategories(Categories categories) {
+        this.categories = categories;
+    }
+}
 

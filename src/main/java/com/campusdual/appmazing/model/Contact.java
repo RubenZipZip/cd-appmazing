@@ -1,16 +1,18 @@
 package com.campusdual.appmazing.model;
 
-import javax.persistence.*;
+import javax.persistence.*; // insert en la bbdd-spring
 
 @Entity
 @Table(name = "CONTACTS")
 
 public class Contact {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  //
 
 
 private int Id;
+
+    @Column
     private String name;
 
 
@@ -68,9 +70,9 @@ private int Id;
         return Id;
     }
 
-    public void setId(int id) {
-        Id = id;
-    }
+   public void setId(int id) {
+      Id = id;
+ }
 }
 
 

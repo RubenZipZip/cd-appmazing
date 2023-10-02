@@ -4,13 +4,13 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
-@Entity // indica que esta clase es una entidad persistible  y que es un elemento que se va a poder guardar en BBDD y recuperarlo
-@Table(name = "PRODUCTS")// asociamos la tabla PRODUCTOS de dbeaver con el modelo producto, para que por cada elemento que tenga se genere un producto
+@Entity //un modelo- indica que esta clase es una entidad persistible  y que es un elemento que se va a poder guardar en BBDD y recuperarlo
+@Table(name = "PRODUCTS")// el modelo va a representar la tabla (Products)asociamos la tabla PRODUCTOS de dbeaver con el modelo producto, para que por cada elemento que tenga se genere un producto
 public class Product {
-    @Id //indica que esta es la clave primaria
+    @Id //indica que esta es la clave primaria, el identificador
     @GeneratedValue(strategy = GenerationType.IDENTITY) //como es un valor autogenerable lo generamos siguiendo la estrategia de GenerationType.IDENTITY
     private int id;
-    @Column
+    @Column // las columnas de la bbdd
     private String name;
     @Column
     private int stock;
@@ -21,9 +21,17 @@ public class Product {
     @Column
     private Date date_added;
 
+    @ManyToOne //
+    @JoinColumn(name = "category_id") //columna creada para enlazar
+    private Categories categories;
 
+    public Categories getCategories() {
+        return this.categories;
+    }
 
-
+    public void setCategories(Categories categories) {
+        this.categories = categories;
+    }
 
     public String getName() {
         return name;

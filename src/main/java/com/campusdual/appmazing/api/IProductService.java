@@ -6,12 +6,14 @@ import java.util.List;
 
 public interface IProductService {
 
-
-    ProductDTO queryProduct (ProductDTO product);
-    List<ProductDTO> queryAllProducts();
-    int insertProduct (ProductDTO product);
+//paso los metodos CRUD
+    ProductDTO queryProduct (ProductDTO product); //devuel un porduct y pasa un trozo de productDTO
+    List<ProductDTO> queryAllProducts(); //pide todos los productos
+    int insertProduct (ProductDTO product);//añadir
     int updateProduct (ProductDTO product);
     int deleteProduct (ProductDTO product);
+
+
 
 }
 

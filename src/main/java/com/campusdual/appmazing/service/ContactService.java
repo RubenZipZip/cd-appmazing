@@ -21,7 +21,7 @@ public class ContactService implements IContactService {
 
 
 
-    @Override
+    @Override // metodos de la interfaz implementados
     public ContactDTO queryContact(ContactDTO contactDTO) {
         Contact contact = ContactMapper.INSTANCE.toEntity(contactDTO);
         Contact contactFinal = this.contactDao.getReferenceById(contact.getId());
@@ -31,18 +31,13 @@ public class ContactService implements IContactService {
 
 
     @Override
-    public List<ContactDTO> queryAllContact() {
-        return null;
-    }
-
-    @Override
     public List<ContactDTO> queryAllContacts() {
         return ContactMapper.INSTANCE.toDTOList(this.contactDao.findAll());
     }
 
     @Override
     public int insertContact(ContactDTO contactDTO) {
-        Contact contact = ContactMapper.INSTANCE.toEntity(contactDTO);
+       Contact contact = ContactMapper.INSTANCE.toEntity(contactDTO);
         this.contactDao.saveAndFlush(contact);
         return contact.getId();
     }

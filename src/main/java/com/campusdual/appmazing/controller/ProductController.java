@@ -30,11 +30,19 @@ import java.util.List;
     public String TestControllerMethod() {
         return "Product controller method work!";
     }
-
-    @PostMapping(value ="/get")
+/*
+    @GetMapping(value ="/get")
     public ProductDTO queryProduct(@RequestBody ProductDTO product) {
        return this.productService.queryProduct(product);
     }
+
+
+ */
+@GetMapping(value ="/get")
+public ProductDTO queryProduct(@RequestBody ProductDTO product) {
+    return this.productService.queryProduct(product);
+}
+
 
     @GetMapping(value = "/getAll") //
     public List<ProductDTO> queryAllProducts(){

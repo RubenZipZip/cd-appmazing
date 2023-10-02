@@ -14,14 +14,14 @@ import java.util.List;
 
 
 @Service("ProductService")
-@Lazy
-public class ProductService implements IProductService{
+@Lazy //no se creará cuando se inicie la aplicacion por primera
+public class ProductService implements IProductService{ //Indicamos como los servicios tienen que implementar una interfaz
     @Autowired
-    private ProductDao productDao;
+    private ProductDao productDao; // le pasamos un dao para saber como comunicarse
     @Override
     public ProductDTO queryProduct(ProductDTO productDTO) { //PASA DTO
         Product product = ProductMapper.INSTANCE.toEntity(productDTO);// lo convierte a producto para buscarlo
-        Product productFinal = this.productDao.getReferenceById(product.getId()); //recojo ID y llamo al DAO ->clase product id
+        Product productFinal = this.productDao.getReferenceById(product.getId()); //paso el ID pq es una consulta y llamo al DAO ->clase product id
         return ProductMapper.INSTANCE.toDTO(productFinal);
     }
 

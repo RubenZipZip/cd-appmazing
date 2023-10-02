@@ -12,7 +12,7 @@ public interface ProductMapper {
 
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
         ProductDTO toDTO(Product product);
-        List<ProductDTO> toDTOList(List<Product> products);
-        Product toEntity(ProductDTO productDTO);
+        List<ProductDTO> toDTOList(List<Product> products); //lista productos
+        Product toEntity(ProductDTO productDTO); //le paso un dto y me da un modelo
 
 }
